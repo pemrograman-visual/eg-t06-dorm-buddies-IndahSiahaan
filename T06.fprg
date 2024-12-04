@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="T06"/>
+        <attribute name="authors" value="indah"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-12-04 04:00:01 PM"/>
+        <attribute name="created" value="aW5kYWg7SU5EQUhIU0hOXzsyMDI0LTEyLTA0OzAzOjMyOjUzIFBNOzI1NDc="/>
+        <attribute name="edited" value="aW5kYWg7SU5EQUhIU0hOXzsyMDI0LTEyLTA0OzA0OjAwOjAxIFBNOzM7MjY0Ng=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="nama" type="String" array="True" size="4"/>
+            <call expression="Fungsi1(nama)"/>
+            <call expression="Fungsi2(nama)"/>
+        </body>
+    </function>
+    <function name="Fungsi1" type="None" variable="">
+        <parameters>
+            <parameter name="nama" type="String" array="True"/>
+        </parameters>
+        <body>
+            <declare name="a" type="Integer" array="False" size=""/>
+            <for variable="a" start="0" end="3" direction="inc" step="1">
+                <assign variable="nama[a]" expression="&quot;&quot;"/>
+            </for>
+        </body>
+    </function>
+    <function name="Fungsi2" type="None" variable="">
+        <parameters>
+            <parameter name="nama" type="String" array="True"/>
+        </parameters>
+        <body>
+            <declare name="b, c" type="Integer" array="False" size=""/>
+            <for variable="b" start="0" end="3" direction="inc" step="1">
+                <input variable="nama[b]"/>
+                <if expression="nama[b] = &quot;---&quot;">
+                    <then>
+                        <assign variable="nama[b]" expression="&quot;&quot;"/>
+                        <assign variable="c" expression="b"/>
+                        <assign variable="b" expression="4"/>
+                    </then>
+                    <else>
+                        <assign variable="c" expression="b"/>
+                    </else>
+                </if>
+            </for>
+            <call expression="Fungsi3(nama)"/>
+        </body>
+    </function>
+    <function name="Fungsi3" type="None" variable="">
+        <parameters>
+            <parameter name="nama" type="String" array="True"/>
+        </parameters>
+        <body>
+            <declare name="d" type="Integer" array="False" size=""/>
+            <for variable="d" start="0" end="3" direction="inc" step="1">
+                <output expression="nama[d]" newline="True"/>
+            </for>
+        </body>
+    </function>
+</flowgorithm>
